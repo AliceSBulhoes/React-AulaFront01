@@ -1,9 +1,27 @@
 import Result from "./components/Result"
-import { useState, useEffect } from "react" //Hooks
+import { useState, useEffect } from "react" //Hooks 
+
+
+//Hooks - useStates: Altera o valor da variável
+const[altura,setAltura] = useState(0);
+const[peso,setPeso] = useState(0);
+const[resultado,setResult] = useState(0);
+const[mostrarResultado, setMostrarResultado] = useState(false);
+
+//Criando a função
+const calcularIMC = () =>{
+  const IMC = peso / (altura*altura);
+
+  return setResult(IMC.toFixed(2));
+}
+
+//Hooks - useEffect: Faz um efeito colateral no resultado
+useEffect(()=>{
+  resultado > 0 ? setMostrarResultado(true):setMostrarResultado(false);
+}, {resultado});
+
 
 function App() {
-
-
 
   return (
     <>
