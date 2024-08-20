@@ -1,4 +1,6 @@
 import React from 'react'
+import "../css/base.css"
+import "../css/resultado.css"
 
 const Dados = (resultado) =>{
     if(resultado < 18.5){
@@ -28,20 +30,22 @@ const Dados = (resultado) =>{
 const Result = ({resultado}) => {
   return (
     <>
-        <div className='resltado'>
-            <h2>Seu IMC é de: <span className='imgSpan'>{resultado}</span></h2>
+        <div className="box">
+            <div className='resultado'>
+                <h2>Seu IMC é de: <span className='imgSpan'>{resultado}</span></h2>
+            </div>
+            <table className='table'>
+                <thead className=''>
+                    <tr>
+                        <th>Classificação: </th>
+                        <th>IMC</th>
+                    </tr>
+                </thead>
+                <tbody className='tableBody'>
+                    <tr>{Dados(resultado)}</tr>
+                </tbody>
+            </table>
         </div>
-        <table className='table'>
-            <thead className=''>
-                <tr>
-                    <th>Classificação: </th>
-                    <th>IMC</th>
-                </tr>
-            </thead>
-            <tbody className='tableBody'>
-                <tr>{Dados()}</tr>
-            </tbody>
-        </table>
     </>
   )
 }
