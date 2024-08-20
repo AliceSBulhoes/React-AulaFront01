@@ -35,7 +35,7 @@ const Result = ({resultado}) => {
                 <h2>Seu IMC é de: <span className='imgSpan'>{resultado}</span></h2>
             </div>
             <table className='table'>
-                <thead className=''>
+                <thead>
                     <tr>
                         <th>Classificação: </th>
                         <th>IMC</th>
